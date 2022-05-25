@@ -35,10 +35,6 @@ function getRandom() {
 client.on('message', async message => {
 	if (message.content.includes('Ben' || 'ben' || 'BEN' || '@tryatix#8318')) {
 		message.channel.send("They're nowhere near as cool as me");
-	} else if (message.content.includes('ben')) {
-        message.channel.send("They're nowhere near as cool as me");
-    } else if (message.content.includes('@tryatix')) {
-        message.channel.send("They're nowhere near as cool as me");
     // } else if (message.content.includes('music')) {
     //     message.channel.send('I made a music once.');
     } else if (message.content.includes('have you ever had a dream')) {
@@ -65,5 +61,14 @@ client.on('message', async message => {
         }
         movieDetails(parsed)
             .then(movieReply);
+    }
+    //dispenses advice if the word 'advice' is used in a message
+    if(message.content.includes('advice')){
+        async function getAdvice() {
+            const response = await fetch('https://api.adviceslip.com/advice');
+            const result = await response.json();
+            message.channel.send(`${result.slip.advice}`)
+        }
+        getAdvice()
     }
 });

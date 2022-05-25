@@ -1,0 +1,7 @@
+This is where we'll have ideas of what to add to ye olde bot.
+
+1. I want to have all of the message.content checking done with regular expressions.
+2. I'd like for the bot to keep score using a database (probbably firebase)
+to have a score system going. Gives people points for each time they send a message 
+maybe even give a point for each minute spent in voice chat. I have no clue if that's
+possible but I'd like to look into it.
