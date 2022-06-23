@@ -3,7 +3,7 @@ const { Client, Intents } = require('discord.js');
 const { token } = require('./config.json');
 
 // Create a new client instance
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: 68608 });
 
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
@@ -18,8 +18,6 @@ const queryKey = '&apikey=85b7c5f1'
 let plot = 'test';
 let title = 'ugh';
 
-
-client.login('OTc4NDc2NDc5MzU4ODMyNzAw.Gn9I1I.3FgBlKp4bkUVl8ydiLfdIRevkwRBBZKtVG6Unk');
 //Function to get movie details.
 async function movieDetails(searchTerm) {
     const response = await fetch(queryBase + searchTerm + queryKey);
@@ -37,6 +35,8 @@ function getRandom() {
 }
 //message listener (might want to change this to a switch, but who knows/cares)
 client.on('message', async message => {
+    console.log(message.content);
+    console.log(message);
 	if (message.content.includes('Ben' || 'ben' || 'BEN' || '@tryatix#8318')) {
 		message.channel.send("They're nowhere near as cool as me");
     // } else if (message.content.includes('music')) {
@@ -76,3 +76,5 @@ client.on('message', async message => {
         getAdvice()
     }
 });
+
+client.login(token);
