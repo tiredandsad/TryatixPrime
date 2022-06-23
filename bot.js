@@ -1,6 +1,3 @@
-//This is the token dummy.
-//OTc4NDc2NDc5MzU4ODMyNzAw.Gn9I1I.3FgBlKp4bkUVl8ydiLfdIRevkwRBBZKtVG6Unk
-
 // Require the necessary discord.js classes
 const { Client, Intents } = require('discord.js');
 const { token } = require('./config.json');
