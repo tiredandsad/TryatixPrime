@@ -1,8 +1,18 @@
 //This is the token dummy.
 //OTc4NDc2NDc5MzU4ODMyNzAw.Gn9I1I.3FgBlKp4bkUVl8ydiLfdIRevkwRBBZKtVG6Unk
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
+// Require the necessary discord.js classes
+const { Client, Intents } = require('discord.js');
+const { token } = require('./config.json');
+
+// Create a new client instance
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
+// When the client is ready, run this code (only once)
+client.once('ready', () => {
+	console.log('Ready!');
+});
+
 //movie api keys and shit
 const queryBase = 'http://www.omdbapi.com/?t='
 const queryKey = '&apikey=85b7c5f1'
@@ -11,9 +21,6 @@ const queryKey = '&apikey=85b7c5f1'
 let plot = 'test';
 let title = 'ugh';
 
-client.once('ready', () => {
-    console.log('Ready!');
-});
 
 client.login('OTc4NDc2NDc5MzU4ODMyNzAw.Gn9I1I.3FgBlKp4bkUVl8ydiLfdIRevkwRBBZKtVG6Unk');
 //Function to get movie details.
