@@ -1,15 +1,14 @@
 // Require the necessary discord.js classes
-const { Client, Intents } = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 
 // Create a new client instance
-const client = new Client({ intents: 68608 });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent] });
 
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
 	console.log('Ready!');
 });
-
 //movie api keys and shit
 const queryBase = 'http://www.omdbapi.com/?t='
 const queryKey = '&apikey=85b7c5f1'
@@ -34,7 +33,8 @@ function getRandom() {
     return Math.floor(Math.random() * (maxCeil - minCeil) + minCeil);
 }
 //message listener (might want to change this to a switch, but who knows/cares)
-client.on('message', async message => {
+
+client.on('message', message => {
     console.log(message.content);
     console.log(message);
 	if (message.content.includes('Ben' || 'ben' || 'BEN' || '@tryatix#8318')) {
