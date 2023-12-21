@@ -1,14 +1,22 @@
 {
     "222196413273079810": {
-        "balance": 54,
+        "balance": 63,
         "username": "SpecificMills"
     },
     "592757263144583243": {
-        "balance": 13,
+        "balance": 15,
         "username": "AGENTMYSTERY"
     },
     "279104763658895370": {
-        "balance": 4,
+        "balance": 5,
         "username": "tryatix"
+    },
+    "877383228355391519": {
+        "balance": 1,
+        "username": "877383228355391519"
+    },
+    "704342724920344623": {
+        "balance": 2,
+        "username": "704342724920344623"
     }
 }
