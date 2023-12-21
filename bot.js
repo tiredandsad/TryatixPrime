@@ -4,7 +4,13 @@ const config = require('./config.json')
 const { token } = config;
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({
-    intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
+    intents: [
+        GatewayIntentBits.Guilds, 
+        GatewayIntentBits.GuildMessages, 
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildMessageReactions
+    ],
+    partials: ['MESSAGE', 'REACTION'],
 });
 
 client.on('ready', () => {
@@ -130,6 +136,13 @@ client.on('messageCreate', (message) => {
         getAdvice();
     }
 });
+client.on('messageReactionAdd', (reaction, user) => {
+    // Do something when a reaction is added
+    console.log(reaction.message.id)
+    console.log(reaction.emoji.name)
+    console.log(user.tag)
+    console.log(`${user.tag} reacted with ${reaction.emoji.name} to the message.`);
+  });
 
 
 
